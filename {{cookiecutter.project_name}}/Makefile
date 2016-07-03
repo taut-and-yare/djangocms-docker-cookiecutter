@@ -23,5 +23,5 @@ initial-jade2html: $(PIP) ./compilejade.sh
 
 docker:
 	docker-compose build
-	docker-compose run django python ./manage.py migrate
+	docker-compose run django python ./src/manage.py migrate
 	#docker-compose run django python ./manage.py collectstatic --noinput
