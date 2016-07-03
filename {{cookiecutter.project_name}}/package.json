@@ -4,7 +4,7 @@
   "description": "## what's inside. * python3 * Django 1.9.5 * djangoCMS 3.2.5 * pyjade * bootstrap 4",
   "main": "index.js",
   "scripts": {
-    "jade2html": "./bin/compilejade.sh",
+    "jade2html": "./compilejade.sh",
     "build:watch": "onchange './**/*.jade' -- npm run jade2html"
   },
   "repository": {

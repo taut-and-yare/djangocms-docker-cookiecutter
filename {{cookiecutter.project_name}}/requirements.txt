@@ -12,5 +12,8 @@ dj-database-url==0.4.1
 psycopg2==2.6.1
 django-filer==1.2.2
 cmsplugin-filer==1.1.1
-pyjade==4.0.0
 django-reversion<=1.11
+
+tornado
+jinja2
+pyjade==4.0.0

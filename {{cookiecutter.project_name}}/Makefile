@@ -9,10 +9,8 @@ $(PYTHON):
 	virtualenv -p python3 env
 
 $(PIP): $(PYTHON)
-
-install-pyjade: $(PIP)
-	$(PIP) install tornado
-	$(PIP) install pyjade
+	export CC=gcc
+	$(PIP) install -r requirements.txt
 
 install-node-packages: ./src/static/package.json
 	#install into static dir
@@ -20,10 +18,10 @@ install-node-packages: ./src/static/package.json
 	#install for project as a whloe
 	$(NPM) install
 
-initial-jade2html: ./bin/compilejade.sh
+initial-jade2html: $(PIP) ./compilejade.sh
 	$(NPM) run jade2html
 
 docker:
 	docker-compose build
-	#docker-compose run django python ./source/manage.py migrate
+	docker-compose run django python ./source/manage.py migrate
 	#docker-compose run django python ./source/manage.py collectstatic --noinput
