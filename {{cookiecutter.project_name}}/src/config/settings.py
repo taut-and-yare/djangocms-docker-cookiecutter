@@ -80,7 +80,7 @@ MIDDLEWARE_CLASSES = [
     'cms.middleware.language.LanguageCookieMiddleware',
 ]
 
-ROOT_URLCONF = 'src.config.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -111,7 +111,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'src.config.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Database
@@ -171,7 +171,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, "media")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = "/media/"
 
 
