@@ -10,8 +10,6 @@ services:
       context: .
 
     env_file: .env
-    environment:
-      DJANGO_SETTINGS_MODULE: config.settings
 
     ports:
       - "{{cookiecutter.port}}:{{cookiecutter.port}}"
