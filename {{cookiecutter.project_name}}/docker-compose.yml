@@ -14,7 +14,7 @@ services:
       DJANGO_SETTINGS_MODULE: config.settings
 
     ports:
-      - "8000:8000"
+      - "{{cookiecutter.port}}:{{cookiecutter.port}}"
 
     links:
       - postgres
