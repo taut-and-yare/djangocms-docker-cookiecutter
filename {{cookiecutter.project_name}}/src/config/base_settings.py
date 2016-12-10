@@ -177,13 +177,11 @@ LANGUAGES = [
 ]
 
 CMS_TEMPLATES = (
-    {% if cookiecutter.html_framework == 'material design lite' -%}
-    ('layout/default_md_lite.jade', 'Default'),
-    {% elif cookiecutter.html_framework == 'foundation 6' -%}
-    ('layout/default_foundation.jade', 'Default'),
-    {% elif cookiecutter.html_framework == 'bootstrap 4' -%}
-    ('layout/default_bootstrap.jade', 'Default'),
-    {%- endif %}
+    {% if cookiecutter.html_framework == 'material design lite' %}
+    ('layout/default_md_lite.html', 'Default'),
+    {% elif cookiecutter.html_framework == 'bootstrap 4' %}
+    ('layout/default_bootstrap.html', 'Default'),
+    {% endif %}
 )
 
 THUMBNAIL_PROCESSORS = (
