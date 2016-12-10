@@ -1,0 +1,4 @@
+{%  load menu_tags %}{% raw %}
+{% for child in children|__pyjade_iter:1 %}
+<li><a href="{{ child.get_absolute_url }}">{{child.get_menu_title}}</a>
+</li>{% endfor %}{% endraw %}

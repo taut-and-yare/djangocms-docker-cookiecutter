@@ -1,0 +1,17 @@
+{%  extends 'base.html' %}{%  load cms_tags menu_tags %}{% block content %}{% endblock %}{% raw %}
+
+<div data-responsive-toggle="example-menu" data-hide-for="medium" class="title-bar">
+  <button type="button" data-toggle="" class="menu-icon"></button>
+  <div class="title-bar-title">Menu</div>
+</div>
+<div id="example-menu" class="top-bar">
+  <div class="top-bar-left">
+    <ul data-dropdown-menu="" class="dropdown menu">{% show_menu 0 2 100 100 "partials/_menu_md_lite.html" %}
+
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns">{%  placeholder content %}
+  </div>
+</div>{% endraw %}
