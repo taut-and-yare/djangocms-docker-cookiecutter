@@ -19,4 +19,16 @@
 * `psql -U username -h postgres`
 
 ### production
+* [install docker](https://docs.docker.com/install/linux/docker-ce/ubuntu/)
+* install nginx
+* [install certbot](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx)
+* install git
+* create keypair
+* add public key to bitbucket
+* clone repo
+* docker-compose build
+* fire that thing up
+* create certs
+* add cert update command to crontab
+
 * `docker-compose -f docker-compose.yml -f docker-compose-production.yml up -d`

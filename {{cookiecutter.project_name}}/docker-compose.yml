@@ -18,14 +18,14 @@ services:
       - postgres
 
     volumes:
-      - ./src/:/project/src/
+      - .:/project
       - ./backups:/backups
 
     command: /project/bin/uwsgi.sh
 
   postgres:
     env_file: .env
-    image: postgres:9.5
+    image: postgres:9.6
 
     volumes:
       - postgres_data:/var/lib/postgresql/data

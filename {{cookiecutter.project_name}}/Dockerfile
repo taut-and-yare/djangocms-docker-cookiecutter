@@ -1,7 +1,6 @@
-FROM python:3.5
+FROM python:3.6
 
-RUN apt-get -qq update
-RUN apt-get -y install jpegoptim optipng
+RUN apt-get -qq update && apt-get install -y jpegoptim optipng
 
 ADD . /project
 WORKDIR /project

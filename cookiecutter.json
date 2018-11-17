@@ -2,6 +2,6 @@
   "project_name": "project_name",
   "html_framework": ["bootstrap 4", "material design lite"],
   "default_font": ["Helvetica", "Roboto", "Roboto Mono"],
-  "domain": "www.domain.com",
+  "domain": "domain.com",
   "port": "8000"
 }
