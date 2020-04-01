@@ -1,4 +1,4 @@
-version: '2'
+version: "3"
 
 volumes:
   postgres_data: {}
@@ -14,14 +14,14 @@ services:
     ports:
       - "{{cookiecutter.port}}:{{cookiecutter.port}}"
 
-    links:
+    depends_on:
       - postgres
 
     volumes:
       - .:/project
       - ./backups:/backups
 
-    command: /project/bin/uwsgi.sh
+    command: /project/bin/gunicorn.sh
 
   postgres:
     env_file: .env
@@ -30,3 +30,4 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - postgres_backup:/backups
+      - ./backups:/db_backups

@@ -1,10 +1,36 @@
-version: '2'
+version: "3"
+
+volumes:
+  postgres_data: {}
+  postgres_backup: {}
 
 services:
   django:
+    build:
+      context: .
+
+    env_file: .env
+
+    ports:
+      - "{{cookiecutter.port}}:{{cookiecutter.port}}"
+
+    depends_on:
+      - postgres
+
+    volumes:
+      - .:/project
+      - ./backups:/backups
+
+    command: /project/bin/gunicorn.sh
     restart: always
-    environment:
-      DJANGO_SETTINGS_MODULE: config.env.production
 
   postgres:
+    env_file: .env
+    image: postgres:12
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - postgres_backup:/backups
+      - ./backups:/db_backups
+
     restart: always
